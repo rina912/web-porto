@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="syle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header" id="home">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-a"></i>
+                    <div class="logo-text">Azrul Wicaksono</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <div class="hero-pic">
+                    <img src="amie-roussel-FhXxbxaT98w-unsplash.jpg" alt="profile pic">
+                </div>
+                <div class="hero-text">
+                    <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
+                    <h1>Azrul Wicaksono</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus dolorum 
+                       quibusdam maiores magni quod rem in porro, laborum, laudantium ex repellendus explicabo, 
+                       autem molestiae!</p>
+
+                    <div class="btn-group">
+                       <a href="#" class="btn active">Download CV</a>
+                       <a href="#" class="btn">Contact</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="portfolio">        
+        <div class="portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-item">
+                <img src="fams.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Deskripsi singkat tentang proyek ini. Anda bisa mencantumkan teknologi yang digunakan atau tujuan proyek ini.</p>
+                <a href="link-to-project1.com" target="_blank" class="btn">Lihat Proyek</a>
+            </div>
+    
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-item">
+                <img src="fams.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Deskripsi singkat tentang proyek ini. Jelaskan kegunaannya atau hasil yang dicapai.</p>
+                <a href="link-to-project2.com" target="_blank" class="btn">Lihat Proyek</a>
+            </div>
+    
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-item">
+                <img src="fams.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Deskripsi singkat tentang proyek ini. Tulis apa yang membuat proyek ini unik.</p>
+                <a href="link-to-project3.com" target="_blank" class="btn">Lihat Proyek</a>
+            </div>
+    
+            <!-- Tambahkan lebih banyak proyek sesuai kebutuhan -->
+        </div>
+    </div>
+    </div>
+    <div class="section" id="resume">
+        <h2>Resume</h2>
+        <p>Isi resume Anda di sini.</p>
+    </div>
+    <div class="section" id="blog">
+        <h2>Blog</h2>
+        <p>Isi blog Anda di sini.</p>
+    </div>
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Isi kontak Anda di sini.</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        document.querySelectorAll('.navlinks li a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Menghentikan perilaku default
+
+                const targetId = this.getAttribute('href'); // Mendapatkan ID target dari atribut href
+                const targetElement = document.querySelector(targetId); // Mencari elemen dengan ID tersebut
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth' // Mengatur perilaku scroll menjadi halus
+                    });
+                }
+            });
+        });
+
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+
+        togglebtn.addEventListener("click", function() {
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        });
+
+        var typed = new Typed(".input", {
+            strings: ["Frontend Developer", "UX Designer", "Web Developer"],
+            typeSpeed: 70,
+            backSpeed: 55,
+            loop: true
+        });
+    </script>
+</body>
+</html>
